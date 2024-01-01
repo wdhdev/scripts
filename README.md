@@ -6,8 +6,6 @@ Custom-made scripts for things I use a lot.
 bash <(curl -s https://scripts.wdh.gg/<folder>/<script>.sh)
 ```
 
-
-
 ## Scripts
 - [Raspberry Pi](/raspberrypi)
   - [init.sh](/raspberrypi/init.sh)
