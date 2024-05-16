@@ -9,6 +9,8 @@ bash <(curl -s https://scripts.wdh.gg/<folder>/<script>.sh)
 ## Scripts
 - [Debian](/debian)
   - [install-docker.sh](/debian/install-docker.sh)
+- [Pterodactyl](/pterodactyl)
+  - [update-panel.sh](/pterodactyl/update-panel.sh)
 - [Raspberry Pi](/raspberrypi)
   - [init.sh](/raspberrypi/init.sh)
 - [Ubuntu](/ubuntu)
