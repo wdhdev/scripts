@@ -4,28 +4,25 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
-# Update
-echo "Updating system packages..."
-apt update -y
-
-# Upgrade
-echo "Upgrading system packages..."
-apt upgrade -y
+# Update packages
+echo "Updating packages..."
+sudo apt update -y
+sudo apt upgrade -y
 
 # Install raspi-config
 echo "Installing raspi-config..."
-apt install raspi-config -y
+sudo apt install raspi-config -y
 
 # Prompt user for confirmation
 read -p "Do you want to enable root SSH login? (y/n): " root_choice
 
 if [[ $root_choice == "y" || $root_choice == "Y" ]]; then
     # Enable root login by modifying the sshd_config file
-    sed -i 's/^#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+    sudo sed -i 's/^#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
     # Restart the SSH service to apply changes
     echo "Restarting SSH service..."
-    systemctl restart ssh
+    sudo systemctl restart ssh
 
     echo "Root login enabled."
 fi
