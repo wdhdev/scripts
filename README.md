@@ -1,13 +1,14 @@
 # Scripts
 Custom-made scripts for things I use a lot.
 
-## Scripts
-- [Debian](/debian)
+---
+
+- Debian
   - [install-docker.sh](/debian/install-docker.sh)
     ```
     bash <(curl -s https://scripts.wdh.gg/debian/install-docker.sh)
     ```
-- [Pelican](/pelican)
+- Pelican
   - [update-panel.sh](/pelican/update-panel.sh)
     ```
     bash <(curl -s https://scripts.wdh.gg/pelican/update-panel.sh)
@@ -16,7 +17,7 @@ Custom-made scripts for things I use a lot.
     ```
     bash <(curl -s https://scripts.wdh.gg/pelican/update-wings.sh)
     ```
-- [Pterodactyl](/pterodactyl)
+- Pterodactyl
   - [update-panel.sh](/pterodactyl/update-panel.sh)
     ```
     bash <(curl -s https://scripts.wdh.gg/pterodactyl/update-wings.sh)
@@ -25,13 +26,8 @@ Custom-made scripts for things I use a lot.
     ```
     bash <(curl -s https://scripts.wdh.gg/pterodactyl/update-wings.sh)
     ```
-- [Raspberry Pi](/raspberrypi)
+- Raspberry Pi
   - [init.sh](/raspberrypi/init.sh)
     ```
     bash <(curl -s https://scripts.wdh.gg/raspberrypi/init.sh)
-    ```
-- [Ubuntu](/ubuntu)
-  - [install-docker.sh](/ubuntu/install-docker.sh)
-    ```
-    bash <(curl -s https://scripts.wdh.gg/ubuntu/install-docker.sh)
     ```
