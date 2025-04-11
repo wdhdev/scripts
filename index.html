@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- HTML Meta Tags -->
+        <title>William's Scripts</title>
+        <meta name="description" content="Custom-made scripts for things I use a lot." />
+
+        <!-- Google / Search Engine Tags -->
+        <meta itemprop="name" content="William's Scripts" />
+        <meta itemprop="description" content="Custom-made scripts for things I use a lot." />
+
+        <!-- Facebook Meta Tags -->
+        <meta property="og:url" content="https://is-a.dev/terms" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="William's Scripts" />
+        <meta property="og:description" content="Custom-made scripts for things I use a lot." />
+
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="William's Scripts" />
+        <meta name="twitter:description" content="Custom-made scripts for things I use a lot." />
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css">
+
+        <!-- Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/15.0.7/marked.min.js"></script>
+    </head>
+
+    <style>
+        body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #0d1117;
+            }
+        }
+    </style>
+
+    <body>
+        <div class="markdown-body" id="content"><p>Loading...</p></div>
+
+        <script>
+            const markdownUrl = "https://raw.githubusercontent.com/wdhdev/scripts/refs/heads/main/README.md";
+
+            const container = document.getElementById("content");
+
+            // Fetch the Markdown file
+            fetch(markdownUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Error fetching the file: ${response.statusText}`);
+                    }
+                    return response.text();
+                })
+                .then(markdown => {
+                    // Convert Markdown to HTML using Marked.js
+                    const htmlContent = marked.parse(markdown);
+
+                    // Insert the HTML into the container
+                    container.innerHTML = htmlContent;
+                })
+                .catch(err => {
+                    console.error(err);
+                    container.innerHTML = `<h3>An error occurred</h3><pre><code>${err}</code></pre>`;
+                });
+        </script>
+    </body>
+</html>
